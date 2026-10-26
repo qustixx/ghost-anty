@@ -5,7 +5,7 @@
 <h1 align="center">Ghost</h1>
 
 <p align="center">
-  An antidetect browser for Windows: many browser profiles side by side, each with its own fingerprint, proxy and cookies.
+  An antidetect browser for Windows and Linux: many browser profiles side by side, each with its own fingerprint, proxy and cookies.
 </p>
 
 <p align="center">
@@ -13,7 +13,9 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/qustixx/ghost-anty/releases/latest/download/Ghost-Setup.exe"><b>⬇ Download Ghost-Setup.exe</b></a>
+  <a href="https://github.com/qustixx/ghost-anty/releases/latest/download/Ghost-Setup.exe"><b>⬇ Download for Windows</b></a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/qustixx/ghost-anty/releases/latest/download/Ghost-linux-x64.tar.gz"><b>⬇ Download for Linux</b></a>
   &nbsp;·&nbsp;
   <a href="https://t.me/ghostbrowser_bot"><b>Buy a key in Telegram</b></a>
 </p>
@@ -60,6 +62,8 @@ You buy a key in the Telegram bot **[@ghostbrowser_bot](https://t.me/ghostbrowse
 
 ## How to start
 
+### On Windows
+
 1. **Download** [Ghost-Setup.exe](https://github.com/qustixx/ghost-anty/releases/latest/download/Ghost-Setup.exe) and run it.
    - Windows may show *"Windows protected your PC"*. Click **More info**, then **Run anyway**.
    - No administrator rights are needed: Ghost installs for your Windows user only.
@@ -69,11 +73,24 @@ You buy a key in the Telegram bot **[@ghostbrowser_bot](https://t.me/ghostbrowse
 
 To update, download the new Ghost-Setup.exe and install it over the old one. Your profiles and settings stay. Ghost also tells you itself when a new version is out.
 
-**Requirements:** Windows 10 or 11, 64-bit, and an internet connection (the key is checked online; Ghost keeps working up to 3 days without one).
+### On Linux
+
+1. **Download** [Ghost-linux-x64.tar.gz](https://github.com/qustixx/ghost-anty/releases/latest/download/Ghost-linux-x64.tar.gz).
+2. Open a terminal in the folder with the file and run:
+   ```bash
+   tar xzf Ghost-linux-x64.tar.gz && ./ghost/install.sh
+   ```
+   No sudo is needed: Ghost installs into `~/.local/opt/ghost`, adds itself to the app menu and adds the `ghost` command.
+   - On Ubuntu 23.10 and newer it may ask for your password once to turn on the browser sandbox. You can skip that with Ctrl+C; Ghost is already installed.
+3. Open Ghost from the app menu, enter your key, and go on as on Windows.
+
+To update, unpack the new archive and run `./ghost/install.sh` again. To remove Ghost, run `./ghost/uninstall.sh`.
+
+**Requirements:** Windows 10 or 11, 64-bit, or 64-bit Linux (Ubuntu 22.04+, Debian 12+ or newer), and an internet connection (the key is checked online; Ghost keeps working up to 3 days without one).
 
 ## Questions
 
-**Where are my profiles kept?** On your computer only, in `%LOCALAPPDATA%\GhostBrowser`. Nothing about your profiles, cookies or proxies is sent anywhere.
+**Where are my profiles kept?** On your computer only, in `%LOCALAPPDATA%\GhostBrowser` on Windows or `~/.local/share/ghost-browser` on Linux. Nothing about your profiles, cookies or proxies is sent anywhere.
 
 **What happens when the key runs out?** Ghost locks until you renew it in the bot. Your profiles are kept and come back as they were.
 

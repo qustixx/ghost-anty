@@ -5,7 +5,7 @@
 <h1 align="center">Ghost</h1>
 
 <p align="center">
-  Антидетект-браузер для Windows: много профилей браузера одновременно, у каждого свой отпечаток, прокси и cookies.
+  Антидетект-браузер для Windows и Linux: много профилей браузера одновременно, у каждого свой отпечаток, прокси и cookies.
 </p>
 
 <p align="center">
@@ -13,7 +13,9 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/qustixx/ghost-anty/releases/latest/download/Ghost-Setup.exe"><b>⬇ Скачать Ghost-Setup.exe</b></a>
+  <a href="https://github.com/qustixx/ghost-anty/releases/latest/download/Ghost-Setup.exe"><b>⬇ Скачать для Windows</b></a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/qustixx/ghost-anty/releases/latest/download/Ghost-linux-x64.tar.gz"><b>⬇ Скачать для Linux</b></a>
   &nbsp;·&nbsp;
   <a href="https://t.me/ghostbrowser_bot"><b>Купить ключ в Telegram</b></a>
 </p>
@@ -60,6 +62,8 @@
 
 ## Как начать
 
+### На Windows
+
 1. **Скачай** [Ghost-Setup.exe](https://github.com/qustixx/ghost-anty/releases/latest/download/Ghost-Setup.exe) и запусти его.
    - Windows может показать *«Система Windows защитила ваш компьютер»*. Нажми **Подробнее**, затем **Выполнить в любом случае**.
    - Права администратора не нужны: Ghost ставится только для твоего пользователя Windows.
@@ -69,11 +73,24 @@
 
 Чтобы обновиться, скачай новый Ghost-Setup.exe и установи его поверх старого. Профили и настройки сохранятся. Ghost и сам подскажет, когда выйдет новая версия.
 
-**Что нужно:** Windows 10 или 11 (64-бит) и интернет (ключ проверяется онлайн; без интернета Ghost работает до 3 дней).
+### На Linux
+
+1. **Скачай** [Ghost-linux-x64.tar.gz](https://github.com/qustixx/ghost-anty/releases/latest/download/Ghost-linux-x64.tar.gz).
+2. Открой терминал в папке с файлом и выполни:
+   ```bash
+   tar xzf Ghost-linux-x64.tar.gz && ./ghost/install.sh
+   ```
+   sudo не нужен: Ghost ставится в `~/.local/opt/ghost`, появляется в меню программ и добавляет команду `ghost`.
+   - На Ubuntu 23.10 и новее он может один раз попросить пароль, чтобы включить sandbox браузера. Этот шаг можно пропустить через Ctrl+C: Ghost уже установлен.
+3. Открой Ghost из меню программ, введи ключ и дальше всё как на Windows.
+
+Чтобы обновиться, распакуй новый архив и снова выполни `./ghost/install.sh`. Чтобы удалить Ghost, выполни `./ghost/uninstall.sh`.
+
+**Что нужно:** Windows 10 или 11 (64-бит) или 64-битный Linux (Ubuntu 22.04+, Debian 12+ или новее) и интернет (ключ проверяется онлайн; без интернета Ghost работает до 3 дней).
 
 ## Вопросы
 
-**Где хранятся мои профили?** Только на твоём компьютере, в `%LOCALAPPDATA%\GhostBrowser`. Профили, cookies и прокси никуда не отправляются.
+**Где хранятся мои профили?** Только на твоём компьютере, в `%LOCALAPPDATA%\GhostBrowser` на Windows или в `~/.local/share/ghost-browser` на Linux. Профили, cookies и прокси никуда не отправляются.
 
 **Что будет, когда ключ закончится?** Ghost заблокируется, пока не продлишь ключ в боте. Профили никуда не денутся и вернутся такими, какими были.
 
